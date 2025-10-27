@@ -1,37 +1,142 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Noto Sans TC", sans-serif;
   margin: 0;
-  text-align: center;
-  background-color: #f9f9f9;
+  font-family: "Noto Sans TC", sans-serif;
+  color: white;
 }
 
 header {
-  background-color: #0078d7;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 1em 0;
+  text-align: center;
+  padding: 15px 0;
+  z-index: 1000;
 }
 
 nav a {
-  margin: 0 15px;
   color: white;
   text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+main {
+  margin-top: 70px;
+}
+
+/* ======================
+   區塊顏色 + 動畫設定
+====================== */
+.city-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 1s ease;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.city-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 15px;
+}
+
+/* 各區塊背景色 */
+.home-bg {
+  background: linear-gradient(135deg, #9ac9ff, #fad0c4);
+}
+.about-bg {
+  background: linear-gradient(135deg, #8cd1ce, #fbc2eb);
+}
+.media-bg {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+.chart-bg {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+}
+.friends-bg {
+  background: linear-gradient(135deg, #43ace9, #c6fdf3);
+}
+
+/* 打字效果 */
+#typing-text {
+  font-size: 30px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  width: fit-content;
+  margin: 0 auto 15px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* 圖片滑入 */
+.slide-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.2s ease;
+}
+.slide-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+iframe {
+  width: 80%;
+  height: 400px;
+  max-width: 600px;
+  border: none;
+  border-radius: 10px;
 }
 
 .responsive-img {
-  width: 90%;
-  max-width: 600px;
-  height: auto;
+  max-width: 300px;
+  width: 80%;
   border-radius: 10px;
-  margin-top: 20px;
+  margin: 10px;
 }
 
-/* 響應式排版 */
+/* 圖表容器 */
+.chart-container {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #111;
+  color: white;
+}
+
+/* 響應式 */
 @media (max-width: 768px) {
-  nav {
-    display: flex;
-    flex-direction: column;
-  }
-  nav a {
-    margin: 10px 0;
-  }
+  header h1 { font-size: 18px; }
+  iframe { height: 200px; }
+  .content { padding: 20px; }
 }

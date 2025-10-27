@@ -3,25 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的興趣介紹網站</title>
+  <title>我的興趣城市主題網站</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>我的興趣介紹網站</h1>
+    <h1>我的興趣城市主題網站</h1>
     <nav>
-      <a href="index.html">首頁</a>
-      <a href="about.html">關於我</a>
-      <a href="media.html">影音專區</a>
-      <a href="chart.html">統計圖表</a>
-      <a href="friends.html">友情連結</a>
+      <a href="#home">首頁</a>
+      <a href="#about">關於我</a>
+      <a href="#media">影音專區</a>
+      <a href="#chart">統計圖表</a>
+      <a href="#friends">友情連結</a>
     </nav>
   </header>
 
   <main>
-    <h2>歡迎來到我的網站！</h2>
-    <p>這裡介紹我最喜歡的音樂、電影和生活點滴。</p>
-    <img src="myphoto.jpg" alt="我的照片" class="responsive-img">
+    <!-- 首頁 -->
+    <section id="home" class="city-section home-bg fade-item">
+      <div class="content">
+        <h2 id="typing-text"></h2>
+        <p class="fade-item">這裡就像一趟城市之旅，每個區塊都是一個不同的故事。</p>
+        <div class="img-group">
+          <img src="images/02.jpg" alt="城市1" class="responsive-img slide-in">
+          <img src="images/03.jpg" alt="城市2" class="responsive-img slide-in">
+          <img src="images/04.jpg" alt="城市3" class="responsive-img slide-in">
+        </div>
+      </div>
+    </section>
+
+    <!-- 關於我 -->
+    <section id="about" class="city-section about-bg fade-item">
+      <div class="content">
+        <h2>👩 關於我</h2>
+        <p>我喜歡用城市來比喻生活的節奏。像台北的快速、京都的靜謐、巴黎的浪漫。</p>
+      </div>
+    </section>
+
+    <!-- 影音專區 -->
+    <section id="media" class="city-section media-bg fade-item">
+      <div class="content">
+        <h2>🎬 影音專區</h2>
+        <p>這是我最喜歡的影片，讓我想起旅行時的感覺：</p>
+        <iframe src="https://youtu.be/PIWXhAvy7uU?si=uVpB38ZkcN55ZNze" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- 統計圖表 -->
+    <section id="chart" class="city-section chart-bg fade-item">
+      <div class="content">
+        <h2>📊 統計圖表</h2>
+        <div class="chart-container">
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- 友情連結 -->
+    <section id="friends" class="city-section friends-bg fade-item">
+      <div class="content">
+        <h2>🤝 友情連結</h2>
+        <ul>
+          <li><a href="https://nono0325.github.io/" target="_blank">有臨</a></li>
+          <li><a href="https://同學2.github.io/website2" target="_blank">同學 2</a></li>
+          <li><a href="https://同學3.github.io/website3" target="_blank">同學 3</a></li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer>
